@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /* https://www.jianshu.com/p/d183265a8dad */
+    /* item宽度不会超过布局宽度 */
+    .container {
+        display: grid;
+        grid-template-columns: 25% 50px auto;
+        grid-template-rows: 1fr 2fr;
+        height: 300px;
+    }
+
+    .item {
+        width: 20px;
+        height: 20px;
+        background-color: #000;
+    }
+
+    .item:nth-child(1) {
+        background-color: rgb(143, 20, 20);
+    }
+
+    .item:nth-child(2) {
+        background-color: #786;
+    }
+
+    /* 相同的倍数 */
+    .container2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /*定义网格区域*/
+    .container3 {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        grid-template-rows: auto;
+        grid-template-areas: "header header header header"
+            "main main . sidebar"
+            "footer footer footer footer"
+    }
+
+    /*网格单元间距*/
+    .container4 {
+        display: grid;
+        grid-template-columns: 100px 50px 100px;
+        grid-template-rows: 80px auto 80px;
+        grid-column-gap: 10px;
+        grid-row-gap: 15px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+        <div class="item item-5"></div>
+        <div class="item item-6"></div>
+    </div>
+
+    <h1>_________________________________________________</h1>
+    <div class="container2">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+    </div>
+    <h1>_________________________________________________</h1>
+    <div class="container3" style='margin-top: 20px;'>
+        <div class="item item-1" style="grid-area: header;"></div>
+        <div class="item item-2" style="grid-area: main;"></div>
+        <div class="item item-3" style="grid-area: sidebar;"></div>
+        <div class="item item-4" style="grid-area: footer;"></div>
+    </div>
+    <h1>_________________________________________________</h1>
+    <div class="container4" style='margin-top: 20px;'>
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+    </div>
+</body>
+
+</html>
